@@ -1,0 +1,270 @@
+@import "susy";
+
+
+
+$color-lt-grey: #d6d6d6;
+$color-dk-violet: #806ead;
+$color-dk-grey: #848cad;
+$color-lt-violet: #b591bc;
+$color-yellow: #e2dd8c;
+$color-dk-navy: #001943;
+$color-white: #ffffff;
+
+$content-width: 80%;
+
+/** base **/
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16pt;
+  line-height: 26pt;
+  background-color: #2b2b2b;
+}
+
+body {
+  margin-top: 0;
+  min-width: 14em;
+  padding: 0 em;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.222rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.222rem;
+  text-transform: uppercase;
+}
+
+section {
+  text-align: center;
+  p {
+    text-align: left;
+  }
+}
+
+
+/** layout **/
+.container {
+    @include container;
+}
+
+header {
+ div.logo {
+    text-align: center;
+ }
+ nav {
+   margin-left: auto;
+   margin-right: auto;
+ }
+}
+
+
+
+header, #preroll, #preroll .footer, .pane, .info, footer{
+  @include span-columns(12 omega, 12);
+  @include bleed(1rem);
+}
+
+.pane {
+  p {
+    @include span-columns(8 omega, 12);
+    @include pad(2,2);
+  }
+  .illustration {
+    @include span-columns(6 omega, 12);
+    @include pad(3,3);
+  }
+}
+
+.pane.pane-api {
+  p {
+    @include span-columns(12 omega, 12);
+    @include pad(0,0);
+  }
+
+  .request {
+     .body { margin-top: 2em; }
+  }
+}
+
+ .info {
+    .about-us {
+      display: none;
+    }
+  }
+
+@include at-breakpoint(30em 12) {
+
+  #preroll {
+    .tagline { 
+      @include span-columns(10 omega, 12);
+      @include pad(2,0);
+    }
+    .tagline-2 {
+      @include span-columns(10 omega, 12);
+      @include pad(0,2);
+    }
+  }
+
+
+
+  .info {
+    .links {
+      @include span-columns(4,12);
+    }
+    .about-us {
+      @include span-columns(4,12);
+    }
+    .connect {
+      @include span-columns(4 omega,12);
+    } 
+  }
+}
+
+@include at-breakpoint(60em 12) {
+  header { 
+    div.name {
+      @include span-columns(5,12); 
+    }
+    div.logo {
+       @include span-columns(2,12);
+    }
+    nav {
+      @include span-columns(5 omega,12);
+    }
+  }
+  .info {
+    .about-us {
+      display: block;
+    }
+  }
+}
+
+
+
+/** modules **/
+.container {
+  box-shadow: 0 0 2px 0 $color-dk-grey;
+}
+
+header {
+  text-align: center;
+  background-color: $color-dk-violet;
+  color: $color-lt-grey;
+  nav {
+    margin-top: 1rem;
+    a {
+      font-weight: 800;
+      font-size: .8rem;
+      text-decoration: none;
+      color: $color-white;
+      text-transform: uppercase;
+      margin-left: 0.667em;
+      letter-spacing: 0.025em;
+      white-space: nowrap;
+    }
+  }
+}
+
+footer { 
+  background-color: $color-dk-navy;
+  border-top: 1px solid $color-white;
+  text-align: center;
+  p {
+    width:  100%;
+    color: $color-white;
+    font-size: .667rem;
+  } 
+}
+
+#preroll {
+  padding-top: 2.777rem;
+  padding-bottom: 0;
+  background-color: $color-white;
+  color: $color-lt-grey;
+  .logo  {
+    margin-top: 1.667rem;
+  }
+  .tagline { 
+    font-weight: 800;
+    font-size: 1.667rem;
+    line-height: 1em;
+    text-transform: uppercase;
+    strong {
+      font-size: 2.777rem;
+    }
+  }
+  .tagline-2 {
+    text-align: right;
+  }
+
+  .footer {
+    min-height: 5rem;
+    margin-top: 5rem;
+    background-color: $color-dk-violet;
+    border-bottom: 1px solid $color-white;
+  }
+}
+
+.pane, header, footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pane-image-processing {
+  background-color: $color-lt-grey;
+  color: $color-dk-violet;
+}
+
+.pane-responsive-design {
+  background-color: $color-lt-violet;
+  color: $color-yellow;
+}
+
+.pane-streamline-workflow {
+  background-color: $color-yellow;
+  color: $color-dk-grey;
+}
+
+.pane-api {
+  background-color: $color-white;
+  color: $color-dk-grey;
+  text-align: left;
+}
+
+.info {
+  background-color: $color-dk-navy;
+  color: $color-white;
+  font-size: .8rem;
+  vertical-align: top;
+  p {
+    font-style: italic;
+    width: 100%;
+  }
+  a {
+      color: $color-white;
+      display: block;
+      font-style: italic;
+      text-decoration: none;
+  }
+  .about-us {
+    p { text-align: left; }
+    a {
+      text-decoration: none;
+      color: $color-yellow;
+      display: inline;
+    }
+  }
+}
+

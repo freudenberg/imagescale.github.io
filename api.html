@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ImageScale.co | REST API</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manage your imagescale automations to crop, scale, and resize images online through our REST API." /> 
+    <meta name="keywords" content="api,rest,image,picture,scale,crop,resize,rotate,auto-rotate"  />
+    <meta name="og:type" content="website" />
+    <meta name="author" content="ImageScale.co" />
+
+    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]>
+      <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+     <link href="css/prism.css" media="screen, projection" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class='container'>
+    <!--################ NAVIGATION START ################-->
+    <header id="pagetop">
+        <div class='name'><h1>ImageScale</h1>
+        </div>
+        <div class='logo'>
+            <img src="img/imagescale-logo.svg" alt="ImageScale Logo"/>
+        </div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="documentation.html">Docs</a>
+            <a href="api.html">API</a>
+            <a href="https://mgmt.imagescale.co">Sign In</a>
+        </nav>
+    </header>
+    
+    <section class="pane pane-api">
+        <h1>REST API</h1>
+        <p>All of ImageScale's management features are available through the REST API.</p>
+        
+        <h2>Authentication</h2>
+        <p>Requests are authenticated with HTTP basic authorization using an API Key. You can manage your API Keys in the <a href="https://mgmt.imagescale.co/account#keys">account management interface</a>.</p>
+
+        <div class='api-call api-call-user-create'>
+            <h2>Register a User</h2>
+            <div class='request'>
+                <div class='line'>POST /api/1/users HTTP/1.1</h2>
+                <div class='header header-content-type'>Content-Type: application/json;charset=UTF-8</div>
+                <div class='header header-accept'>Accept: application/json, text/plain</div>
+                <div class='body'><pre><code class='language-js'>{ email: "user@example.com", password: "password" }</code></pre></div>
+            </div>    
+           
+            <ul>
+              <li>WHEN the email is already in use THEN
+                    <div class='response'>
+                        <div class='status'>HTTP/1.1 409 Conflict</div>
+                        <div class='header-content-type'>Content-Type: application/json; charset=utf-8</div>
+                        <div class='body'><pre><code class='language-js'></code></pre>
+                    </div>
+              </li>
+              <li>WHEN any other error occurs THEN
+                    <div class='response'>
+                        <div class='status'>HTTP/1.1 500 Internal Server Error</div>
+                        <div class='header-content-type'>Content-Type: application/json; charset=utf-8</div>
+                        <div class='body'><pre><code class='language-js'></code></pre>
+                    </div>
+              </li>
+              <li>WHEN the email is not in use THEN return 200 with user record.
+                 <div class='response'>
+                    <div class='status'>HTTP/1.1 200 OK</div>
+                    <div class='header-content-type'>Content-Type: application/json; charset=utf-8</div>
+                    <div class='body'><pre><code class='language-js'>{"user":{"id":"5181F322d771ba464826702","email":"user@example.com"}}</code></pre>
+                </div>
+              </li>
+            </ul>
+        </div>
+        
+
+        <h2>GET  /api/1/users</h2>
+        <h2>GET  /api/1/users/:userId</h2>
+        <h2>PUT  /api/1/users/:userId</h2>
+        <h2>POST /api/1/users/:userId/apikeys</h2>
+        <h2>DELE /api/1/users/:userId/apikeys/:keyId</h2>
+
+        <h2>GET  /api/1/billing/:userId</h2>
+        <h2>PUT  /api/1/billing/:userId</h2>
+        <h2>DELE /api/1/billing/:userId</h2>
+        <h2>GET  /api/1/usage/:userId</h2>
+
+        <h2>GET  /api/1/automations</h2>
+        <h2>POST /api/1/automations</h2>
+        <h2>GET  /api/1/automations/:automationId</h2>
+        <h2>PUT  /api/1/automations/:automationId</h2>
+        <h2>DELE /api/1/automations/:automationId</h2>
+            
+    </section>
+    
+    <!--################ FOOTER START ################-->
+    <section class="info">
+      <section class='links'>
+          <h3>Links</h3>
+          <a href="mailto:support@imagescale.co?subject=Technical Support Request">Support</a>
+          <a href="imagescale-privacy-policy.pdf">Privacy Policy </a>
+          <a href="imagescale-refund-policy.pdf">Refund Policy</a>
+          <a href="mailto:support@imagescale.co?subject=General Contact">Contact</a>
+      </section>
+      <section class='about-us'>
+        <h3>About</h3>
+        <p>ImageScale is a collaboration between <a href="http://agaric.com/">Agaric</a> and <a href="http://spry-group.com">The Spry Group</a>.</p>
+      </section>
+      <section class='connect'>
+          <h3>Connect</h3>
+          <a href="http://twitter.com/imgscale" target="_blank" class="twitter">Twitter</a>
+          <a href="https://github.com/ImageScale" target="_blank" class="github">GitHub</a>
+          <!--<a href="" target="_blank" class="facebook">Facebook</a>-->
+      </section>    
+    </section>
+
+    <footer>
+        <p>© 2013 </p>
+        <p>ImageScale.co P.O. Box 210993 Brooklyn, NY 11221</p>
+    </footer>
+</div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/prism.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-37488554-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</body>
+</html>

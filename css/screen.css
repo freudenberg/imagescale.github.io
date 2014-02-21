@@ -1,0 +1,279 @@
+/** base **/
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16pt;
+  line-height: 26pt;
+  background-color: #2b2b2b;
+}
+
+body {
+  margin-top: 0;
+  min-width: 14em;
+  padding: 0 em;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.222rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.222rem;
+  text-transform: uppercase;
+}
+
+section {
+  text-align: center;
+}
+section p {
+  text-align: left;
+}
+
+/** layout **/
+.container {
+  *zoom: 1;
+  max-width: 59em;
+  _width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header div.logo {
+  text-align: center;
+}
+header nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header, #preroll, #preroll .footer, .pane, .info, footer {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  margin-left: -1rem;
+  padding-left: 1rem;
+  margin-right: -1rem;
+  padding-right: 1rem;
+}
+
+.pane p {
+  width: 66.10169%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  padding-left: 16.94915%;
+  padding-right: 16.94915%;
+}
+.pane .illustration {
+  width: 49.15254%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  padding-left: 25.42373%;
+  padding-right: 25.42373%;
+}
+
+.pane.pane-api p {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+.pane.pane-api .request .body {
+  margin-top: 2em;
+}
+
+.info .about-us {
+  display: none;
+}
+
+@media (min-width: 30em) {
+  #preroll .tagline {
+    width: 83.05085%;
+    float: right;
+    margin-right: 0;
+    padding-left: 16.94915%;
+    padding-right: 0%;
+  }
+  #preroll .tagline-2 {
+    width: 83.05085%;
+    float: right;
+    margin-right: 0;
+    padding-left: 0%;
+    padding-right: 16.94915%;
+  }
+
+  .info .links {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  .info .about-us {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  .info .connect {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 60em) {
+  header div.name {
+    width: 40.67797%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  header div.logo {
+    width: 15.25424%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  header nav {
+    width: 40.67797%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .info .about-us {
+    display: block;
+  }
+}
+/** modules **/
+.container {
+  box-shadow: 0 0 2px 0 #848cad;
+}
+
+header {
+  text-align: center;
+  background-color: #806ead;
+  color: #d6d6d6;
+}
+header nav {
+  margin-top: 1rem;
+}
+header nav a {
+  font-weight: 800;
+  font-size: .8rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  margin-left: 0.667em;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+
+footer {
+  background-color: #001943;
+  border-top: 1px solid white;
+  text-align: center;
+}
+footer p {
+  width: 100%;
+  color: white;
+  font-size: .667rem;
+}
+
+#preroll {
+  padding-top: 2.777rem;
+  padding-bottom: 0;
+  background-color: white;
+  color: #d6d6d6;
+}
+#preroll .logo {
+  margin-top: 1.667rem;
+}
+#preroll .tagline {
+  font-weight: 800;
+  font-size: 1.667rem;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+#preroll .tagline strong {
+  font-size: 2.777rem;
+}
+#preroll .tagline-2 {
+  text-align: right;
+}
+#preroll .footer {
+  min-height: 5rem;
+  margin-top: 5rem;
+  background-color: #806ead;
+  border-bottom: 1px solid white;
+}
+
+.pane, header, footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pane-image-processing {
+  background-color: #d6d6d6;
+  color: #806ead;
+}
+
+.pane-responsive-design {
+  background-color: #b591bc;
+  color: #e2dd8c;
+}
+
+.pane-streamline-workflow {
+  background-color: #e2dd8c;
+  color: #848cad;
+}
+
+.pane-api {
+  background-color: white;
+  color: #848cad;
+  text-align: left;
+}
+
+.info {
+  background-color: #001943;
+  color: white;
+  font-size: .8rem;
+  vertical-align: top;
+}
+.info p {
+  font-style: italic;
+  width: 100%;
+}
+.info a {
+  color: white;
+  display: block;
+  font-style: italic;
+  text-decoration: none;
+}
+.info .about-us p {
+  text-align: left;
+}
+.info .about-us a {
+  text-decoration: none;
+  color: #e2dd8c;
+  display: inline;
+}
