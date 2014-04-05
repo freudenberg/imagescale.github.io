@@ -1,9 +1,49 @@
 ---
 layout: default
 ---
-
-    <section class="pane pane-api">
-        <h1>Documentation</h1>
-        <h2>Managing Automations</h2>
-        <h2>Integrating ImageScale</h2>
-    </section>
+<section class="pane pane-api">
+  <h1>Documentation</h1>
+  <h2>Managing Automations</h2>
+  <h3>Sign in</h3>
+  <p>Once you have logged in with your username and password, you are
+    on the automation screen.</p>
+  <h3>Create new automation</h3>
+  <p>Click <em>New Automation</em>. A new screen appears with various
+  options. Let's set up an automation to scale and crop your
+  images.</p>
+  <p>First have a look at the two tables. The left hand table under
+  the headline <strong>Actions</strong> allows you to compose your
+  automation. The right hand table under the
+  headline <strong>Palette</strong> contains the available actions.</p>
+  <ol>
+    <li>Enter a label, e.g. "small-crop"</li>
+    <li>In the Actions table find the row with the <em>Crop</em> action and
+    remove it by clicking the button in the rightmost column of that row.</li>
+    <li>Find the <em>ScaleAndCrop</em> action in the Palette table,
+    click on the word <em>ScaleAndCrop</em> and drag it over the
+    Actions table. Make sure to drop the action between
+    the <em>Load</em> and <em>Render</em> actions. If it does not end
+    up where it ought to be drag it around a bit.</li>
+    <li><em>ScaleAndCrop</em> has some
+    parameters: <em>width</em>, <em>height</em>, <em>yOffset</em>
+    and <em>xOffset</em>. Enter some values for <em>xOffset</em>
+    and <em>yOffset</em>, e.g. 20 and 50.</li>
+    <li>Click the <em>Save<em> button.</li>
+  </ol>
+  <h3>Modify existing automation</h3>
+  <p>Nowadays some images taken by smartphones store camera rotation
+  data and if this is not taken into account the image might show up
+  with an unintended rotation.</p>
+  <p>ImageScale has an action for correcting this
+  automatically: <em>AutoRotate</em>. You can add as many actions to
+  an automation as you want. Beware, sometimes the order matters. All
+  actions are executed in the order you place them in the table from
+  top to bottom.</p>
+  <ol>
+    <li>Drag the <em>AutoRotate</em> action from the Palette table to
+    the Actions table. Make sure it is between <em>Load</em>
+    and <em>Render</em>.</li>
+    <li>Click the <em>Save<em> button.</li>
+  </ol>
+  <h2>Integrating ImageScale</h2>
+</section>
